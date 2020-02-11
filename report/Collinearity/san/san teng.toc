@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Why Collinearity Is a Problem}{3}{0}{1}
+\beamer@sectionintoc {2}{Matrix-Geometric Perspective on Multicollinearity}{8}{0}{2}
+\beamer@sectionintoc {3}{Eigendecomposition}{13}{0}{3}
+\beamer@sectionintoc {4}{Principal Component}{20}{0}{4}
+\beamer@sectionintoc {5}{Ridge Regression}{23}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{27}{0}{6}

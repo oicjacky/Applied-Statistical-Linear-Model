@@ -1,0 +1,80 @@
+---
+title: "APLM hw01"
+author: "san teng"
+date: "2018年10月11日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r , echo=FALSE}
+library(ggplot2)
+```
+
+####(Programming work) The director of admission of a small college select 120 stu- dents at random from the new freshman class in a study to determine whether a student’s grade point average (GPA) at the end of freshman year (Y) can be pre- dicted from ACT score (X). The data information are shown in ”CH01PR19.txt”. Assume X and Y follows the simple linear regression model with $cov(\varepsilon_i , \varepsilon_j  ) = 0$ if $i \neq j$, and $cov(\varepsilon_i , \varepsilon_j ) = \sigma^2$ if $i = j$.
+
+```{r ,include=FALSE, echo=FALSE}
+setwd("C:/Users/Master/Desktop/黃三/應用統計線性模型")
+data <- read.table("CH01PR19.txt" ,header = T)
+Y <- data$GPA
+X <- cbind(1 ,data$Score)
+colnames(X) <- c("1","GPA")
+
+beta_hat <- solve( t(X) %*% X) %*% t(X) %*% Y
+
+g <- ggplot(data, aes(x = Score, y = GPA)) + geom_point() 
+g + geom_abline(intercept = beta_hat[1] ,slope = beta_hat[2])
+
+residual <- Y - X %*% beta_hat
+sum_of_residual <- sum(residual^2)
+MSE <- sum_of_residual / (dim(data)[1] - 2)
+```
+
+###(a) the least squares estimators $\hat{\beta} = (\beta_0 , \beta_1)$ is: 
+```{r (a) LSE}
+beta_hat <- as.vector( solve( t(X) %*% X) %*% t(X) %*% Y )
+beta_hat
+```
+
+###(b) Plot the fitted regression with data:
+```{r (b)Plot}
+g <- ggplot(data, aes(x = Score, y = GPA)) + geom_point() 
+g + geom_abline(intercept = beta_hat[1] ,slope = beta_hat[2])
+```
+
+###我認為這條線(fitted line)並沒有對Score和GPA作出明顯的趨勢呈現。
+###Score 和 GPA並沒有到很明顯的正比關係。在Score介於25~30間，有一些點是GPA低的點，使得如果不看這些資料點，則有著Score愈高，GPA愈高的趨勢。
+
+###(c) the residuals and sum of residuals is:
+
+```{r}
+residual <- Y - X %*% beta_hat
+sum_of_residual <- sum(residual^2)
+head(residual)
+sum_of_residual
+```
+
+###(d) Estimate $\sigma^2$ and $\sigma$ by MSE and $\sqrt{MSE}$:
+
+```{r}
+MSE <- sum_of_residual / (dim(data)[1] - 2)
+MSE
+sqrt(MSE)
+```
+
+
+
+```{r ,include=FALSE, echo=FALSE}
+# lm(GPA ~ Score ,data = data)
+summary(lm(GPA ~ Score ,data = data))
+#summary(residual) 
+#sqrt(t( residual - mean(residual) ) %*% ( residual - mean(residual) ) / (dim(data)[1] - 2))
+#g + geom_smooth(method = "lm", se = F)
+```
+
+
+
+
+
