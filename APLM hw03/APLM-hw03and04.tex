@@ -1,0 +1,296 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={APLM hw03and04},
+            pdfauthor={san teng},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{APLM hw03and04}
+\author{san teng}
+\date{2018/12/26}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringr)}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"D:/github_oicjacky/Applied Statistical Linear Model/APLM hw03"}\NormalTok{)}
+\KeywordTok{rm}\NormalTok{(}\DataTypeTok{list =} \KeywordTok{ls}\NormalTok{())}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"CH09TA01.txt"}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"X1"}\NormalTok{,}\StringTok{"X2"}\NormalTok{,}\StringTok{"X3"}\NormalTok{,}\StringTok{"X4"}\NormalTok{,}\StringTok{"X5"}\NormalTok{,}\StringTok{"Y"}\NormalTok{,}\StringTok{"lnY"}\NormalTok{)}
+
+\NormalTok{n <-}\StringTok{ }\KeywordTok{dim}\NormalTok{(data)[}\DecValTok{1}\NormalTok{]}
+\NormalTok{P <-}\StringTok{ }\DecValTok{5}            \CommentTok{# 5 predict variable}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{power set}\label{power-set}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{powerset =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(s)\{}
+\NormalTok{  len =}\StringTok{ }\KeywordTok{length}\NormalTok{(s)}
+\NormalTok{  l =}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\DataTypeTok{mode=}\StringTok{"list"}\NormalTok{,}\DataTypeTok{length=}\DecValTok{2}\OperatorTok{^}\NormalTok{len) }
+\NormalTok{  l[[}\DecValTok{1}\NormalTok{]]=}\KeywordTok{numeric}\NormalTok{()}
+\NormalTok{  counter =}\StringTok{ }\DecValTok{1}
+  \ControlFlowTok{for}\NormalTok{(x }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(s))\{}
+    \ControlFlowTok{for}\NormalTok{(subset }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{counter)\{}
+\NormalTok{      counter=counter}\OperatorTok{+}\DecValTok{1}
+\NormalTok{      l[[counter]] =}\StringTok{ }\KeywordTok{c}\NormalTok{(l[[subset]],s[x])}
+\NormalTok{    \}}
+\NormalTok{  \}}
+  \KeywordTok{return}\NormalTok{(l)}
+\NormalTok{\}}
+\CommentTok{#powerset(1:P)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{\texorpdfstring{\(R^2\) \& adjusted
+\(R^2\)}{R\^{}2 \& adjusted R\^{}2}}\label{r2-adjusted-r2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# R squares}
+\NormalTok{R.square <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(data , mod)\{}
+  
+\NormalTok{  SSTO <-}\StringTok{ }\KeywordTok{sum}\NormalTok{( ( data}\OperatorTok{$}\NormalTok{Y }\OperatorTok{-}\StringTok{ }\KeywordTok{mean}\NormalTok{(data}\OperatorTok{$}\NormalTok{Y) )}\OperatorTok{^}\DecValTok{2}\NormalTok{ )}
+\NormalTok{  SSE <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(mod}\OperatorTok{$}\NormalTok{residuals}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+  
+  \KeywordTok{return}\NormalTok{( }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{(SSE }\OperatorTok{/}\StringTok{ }\NormalTok{SSTO) )}
+\NormalTok{\}}
+\CommentTok{# adjusted R squares}
+\NormalTok{R.adjust <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(data , mod)\{}
+\NormalTok{  n <-}\StringTok{ }\KeywordTok{dim}\NormalTok{(data)[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  p <-}\StringTok{ }\NormalTok{mod}\OperatorTok{$}\NormalTok{rank}
+  
+\NormalTok{  SSTO <-}\StringTok{ }\KeywordTok{sum}\NormalTok{( ( data}\OperatorTok{$}\NormalTok{Y }\OperatorTok{-}\StringTok{ }\KeywordTok{mean}\NormalTok{(data}\OperatorTok{$}\NormalTok{Y) )}\OperatorTok{^}\DecValTok{2}\NormalTok{ )}
+\NormalTok{  SSE <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(mod}\OperatorTok{$}\NormalTok{residuals}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+  
+  \KeywordTok{return}\NormalTok{( }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{( (n}\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{(n}\OperatorTok{-}\NormalTok{p) ) }\OperatorTok{*}\StringTok{ }\NormalTok{(SSE }\OperatorTok{/}\StringTok{ }\NormalTok{SSTO) )}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#length(powerset(1:P))}
+\NormalTok{all_possible <-}\StringTok{ }\KeywordTok{powerset}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{P)}
+\NormalTok{R_adj.square <-}\StringTok{ }\NormalTok{R_square <-}\StringTok{ }\KeywordTok{c}\NormalTok{()}
+\NormalTok{variable <-}\StringTok{ }\KeywordTok{c}\NormalTok{()}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{2}\OperatorTok{:}\StringTok{ }\KeywordTok{length}\NormalTok{(all_possible) ) \{}
+  
+  \ControlFlowTok{if}\NormalTok{( }\KeywordTok{length}\NormalTok{(all_possible[[i]]) }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{ )\{}
+\NormalTok{    A <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( data[, all_possible[[i]] ] , }
+                     \DataTypeTok{Y =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Y                         )}
+    \KeywordTok{colnames}\NormalTok{(A)[}\OperatorTok{-}\DecValTok{2}\NormalTok{] <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"X"}\NormalTok{,all_possible[[i]])}
+\NormalTok{    a <-}\StringTok{ }\KeywordTok{R.adjust}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] ,A) )}
+\NormalTok{    b <-}\StringTok{ }\KeywordTok{R.square}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] ,A) )}
+    \CommentTok{#print(colnames(A))}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{( }\KeywordTok{length}\NormalTok{(all_possible[[i]]) }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{ )\{}
+\NormalTok{    A <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( data[, all_possible[[i]] ] [ ,}\DecValTok{1}\NormalTok{] , }
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{2}\NormalTok{] ,}
+                     \DataTypeTok{Y =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Y                         )}
+    \KeywordTok{colnames}\NormalTok{(A)[}\OperatorTok{-}\DecValTok{3}\NormalTok{] <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(data[, all_possible[[i]] ])}
+\NormalTok{    a <-}\StringTok{ }\KeywordTok{R.adjust}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] ,A) )}
+\NormalTok{    b <-}\StringTok{ }\KeywordTok{R.square}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] ,A) )}
+    \CommentTok{#print(colnames(A))}
+    
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{( }\KeywordTok{length}\NormalTok{(all_possible[[i]]) }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{ )\{}
+\NormalTok{    A <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( data[, all_possible[[i]] ] [ ,}\DecValTok{1}\NormalTok{] , }
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{2}\NormalTok{] ,}
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{3}\NormalTok{] ,}
+                     \DataTypeTok{Y =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Y                         )}
+    \KeywordTok{colnames}\NormalTok{(A)[}\OperatorTok{-}\DecValTok{4}\NormalTok{] <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(data[, all_possible[[i]] ])}
+\NormalTok{    a <-}\StringTok{ }\KeywordTok{R.adjust}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{3}\NormalTok{] ,A) )}
+\NormalTok{    b <-}\StringTok{ }\KeywordTok{R.square}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{3}\NormalTok{] ,A) )}
+    \CommentTok{#print(colnames(A))}
+    
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{( }\KeywordTok{length}\NormalTok{(all_possible[[i]]) }\OperatorTok{==}\StringTok{ }\DecValTok{4}\NormalTok{ )\{}
+\NormalTok{    A <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( data[, all_possible[[i]] ] [ ,}\DecValTok{1}\NormalTok{] , }
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{2}\NormalTok{] ,}
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{3}\NormalTok{] ,}
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{4}\NormalTok{] ,}
+                     \DataTypeTok{Y =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Y                         )}
+    \KeywordTok{colnames}\NormalTok{(A)[}\OperatorTok{-}\DecValTok{5}\NormalTok{] <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(data[, all_possible[[i]] ])}
+\NormalTok{    a <-}\StringTok{ }\KeywordTok{R.adjust}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{3}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{4}\NormalTok{] ,A) )}
+\NormalTok{    b <-}\StringTok{ }\KeywordTok{R.square}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{3}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{4}\NormalTok{] ,A) )}
+    \CommentTok{#print(colnames(A))}
+    
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{( }\KeywordTok{length}\NormalTok{(all_possible[[i]]) }\OperatorTok{==}\StringTok{ }\DecValTok{5}\NormalTok{ )\{}
+\NormalTok{    A <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( data[, all_possible[[i]] ] [ ,}\DecValTok{1}\NormalTok{] , }
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{2}\NormalTok{] ,}
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{3}\NormalTok{] ,}
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{4}\NormalTok{] ,}
+\NormalTok{                     data[, all_possible[[i]] ] [ ,}\DecValTok{5}\NormalTok{] ,}
+                     \DataTypeTok{Y =}\NormalTok{ data}\OperatorTok{$}\NormalTok{Y                         )}
+    \KeywordTok{colnames}\NormalTok{(A)[}\OperatorTok{-}\DecValTok{6}\NormalTok{] <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(data[, all_possible[[i]] ])}
+\NormalTok{    a <-}\StringTok{ }\KeywordTok{R.adjust}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{3}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{4}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{5}\NormalTok{] ,A) )}
+\NormalTok{    b <-}\StringTok{ }\KeywordTok{R.square}\NormalTok{(A , }\KeywordTok{lm}\NormalTok{( Y }\OperatorTok{~}\StringTok{ }\NormalTok{A[,}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{2}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{3}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{4}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{A[,}\DecValTok{5}\NormalTok{] ,A) )}
+    \CommentTok{#print(colnames(A))}
+\NormalTok{  \}}
+  
+\NormalTok{  R_adj.square <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(R_adj.square , a )}
+\NormalTok{  R_square <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(R_square , b )}
+\NormalTok{  variable <-}\StringTok{ }\KeywordTok{c}\NormalTok{(variable ,}\KeywordTok{str_c}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(A)[}\OperatorTok{-}\KeywordTok{dim}\NormalTok{(A)[}\DecValTok{2}\NormalTok{]] ,}\DataTypeTok{collapse =} \StringTok{","}\NormalTok{))}
+\NormalTok{\}}
+\NormalTok{A <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{R_square =}\NormalTok{ R_square ,}
+                \DataTypeTok{R_adj.square =}\NormalTok{ R_adj.square ,}
+                \DataTypeTok{variable =}\NormalTok{ variable )}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{\texorpdfstring{the model with highest
+\(R^2\)}{the model with highest R\^{}2}}\label{the-model-with-highest-r2}
+
+\begin{verbatim}
+##       R_square R_adj.square       variable
+## b.30 0.6949877    0.6632155 X1,X2,X3,X4,X5
+\end{verbatim}
+
+\paragraph{\texorpdfstring{the model with highest adjusted
+\(R^2\)}{the model with highest adjusted R\^{}2}}\label{the-model-with-highest-adjusted-r2}
+
+\begin{verbatim}
+##       R_square R_adj.square    variable
+## b.22 0.6910939    0.6658771 X1,X2,X3,X5
+\end{verbatim}
+
+\subsection{CV(1) or leave-one-out cross
+validation}\label{cv1-or-leave-one-out-cross-validation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{candidate <-}\StringTok{ }\KeywordTok{powerset}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{P)[}\OperatorTok{-}\DecValTok{1}\NormalTok{]}
+
+\NormalTok{CV_value <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{ ,}\KeywordTok{length}\NormalTok{(candidate) )}
+\ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(candidate) ) \{}
+  
+\NormalTok{  pred.value <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{ ,n)}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{n)\{}
+\NormalTok{    d <-}\StringTok{ }\KeywordTok{combn}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n ,}\DecValTok{1}\NormalTok{)[,i] }\CommentTok{# CV(1) or leave-one-out cross validation}
+\NormalTok{    data_train <-}\StringTok{ }\NormalTok{data[}\OperatorTok{-}\NormalTok{d ,]}
+\NormalTok{    data_test <-}\StringTok{ }\NormalTok{data[ d ,]}
+    \CommentTok{# training}
+\NormalTok{    xnam <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"X"}\NormalTok{, candidate [[j]] )}
+\NormalTok{    fmla <-}\StringTok{ }\KeywordTok{as.formula}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"Y ~ "}\NormalTok{, }\KeywordTok{paste}\NormalTok{(xnam, }\DataTypeTok{collapse=} \StringTok{"+"}\NormalTok{)))}
+\NormalTok{    model <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(fmla ,data_train) }
+    \CommentTok{# testing}
+\NormalTok{    pred.value[i] <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}
+\NormalTok{      (data_test}\OperatorTok{$}\NormalTok{Y }\OperatorTok{-}\StringTok{ }\KeywordTok{as.matrix}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(}\DecValTok{1}\NormalTok{ ,data_test[,xnam])) }\OperatorTok{%*%}\StringTok{ }\NormalTok{model}\OperatorTok{$}\NormalTok{coefficients)}\OperatorTok{^}\DecValTok{2}\NormalTok{ )}
+    
+\NormalTok{  \}}
+\NormalTok{  CV_value[j] <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(pred.value) }\OperatorTok{/}\StringTok{ }\KeywordTok{dim}\NormalTok{(}\KeywordTok{combn}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n ,}\DecValTok{1}\NormalTok{))[}\DecValTok{2}\NormalTok{]}
+  \CommentTok{#print(xnam)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{the model with smallest CV(1)
+value}\label{the-model-with-smallest-cv1-value}
+
+\begin{verbatim}
+## [1] "X1,X2,X3"
+\end{verbatim}
+
+\end{document}
