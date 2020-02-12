@@ -1,8 +1,14 @@
 ---
 title: "APLM hw01"
 author: "san teng"
-date: "2018年10月11日"
-output: html_document
+date: "2018年10月11日"
+output:
+  pdf_document: 
+    includes:
+      in_header: header.tex
+    latex_engine: xelatex
+    keep_tex: yes
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -13,10 +19,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 ```
 
-####(Programming work) The director of admission of a small college select 120 stu- dents at random from the new freshman class in a study to determine whether a student’s grade point average (GPA) at the end of freshman year (Y) can be pre- dicted from ACT score (X). The data information are shown in ”CH01PR19.txt”. Assume X and Y follows the simple linear regression model with $cov(\varepsilon_i , \varepsilon_j  ) = 0$ if $i \neq j$, and $cov(\varepsilon_i , \varepsilon_j ) = \sigma^2$ if $i = j$.
+####(Programming work) The director of admission of a small college select 120 students at random from the new freshman class in a study to determine whether a student’s grade point average (GPA) at the end of freshman year (Y) can be predicted from ACT score (X). The data information are shown in ”CH01PR19.txt”. Assume X and Y follows the simple linear regression model with $cov(\varepsilon_i , \varepsilon_j  ) = 0$ if $i \neq j$, and $cov(\varepsilon_i , \varepsilon_j ) = \sigma^2$ if $i = j$.
 
 ```{r ,include=FALSE, echo=FALSE}
-setwd("C:/Users/Master/Desktop/黃三/應用統計線性模型")
+setwd("D:/github_oicjacky/Applied Statistical Linear Model/APLM hw01")
 data <- read.table("CH01PR19.txt" ,header = T)
 Y <- data$GPA
 X <- cbind(1 ,data$Score)
