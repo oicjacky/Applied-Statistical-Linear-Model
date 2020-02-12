@@ -1,10 +1,11 @@
 ---
 title: "11/26 APLM Residual analysis"
 author: "san teng"
-date: "2018年11月26日"
+date: "2018/11/26"
 output:
+  pdf_document: 
+    latex_engine: xelatex
   html_document: default
-  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
