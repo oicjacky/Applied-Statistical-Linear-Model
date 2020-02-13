@@ -22,4 +22,4 @@ adjusted R squares and CV(1). See [APLM hw03and04](https://github.com/oicjacky/A
 
 I. For [**Multicollinearity**](https://github.com/oicjacky/Applied-Statistical-Linear-Model/blob/master/report/Collinearity/lecture-17.pdf), our group make a [presentation](https://github.com/oicjacky/Applied-Statistical-Linear-Model/blob/master/report/Collinearity/report1219(%E4%BF%AE).pdf) to discuss how to deal with the problem.   
 
-II. When it comes to the problem of variable selection, we can use some method of [penalized least squares](https://github.com/oicjacky/Applied-Statistical-Linear-Model/blob/master/report/Lasso%20and%20SCAD/Lasso_SCAD.pdf) (or regularization) such as LASSO, SCAD.  
+II. When it comes to the problem of **variable selection**, we can use some method of [penalized least squares](https://github.com/oicjacky/Applied-Statistical-Linear-Model/blob/master/report/Lasso%20and%20SCAD/Lasso_SCAD.pdf) (or regularization) such as LASSO, SCAD.  
